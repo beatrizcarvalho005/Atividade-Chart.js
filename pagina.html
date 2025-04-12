@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chart.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- importar códigos  -->
+</head>
+
+<body style="display: flex;">
+    <div style="margin-right: 40px;">
+        <canvas id="myChart" style="position: relative; height: 400px; width: 600px;"></canvas>
+    </div>
+    <div style="margin-left: 40px;">
+        <canvas id="myChart2" style="position: relative; height: 400px; width: 600px;"></canvas>
+    </div>
+    <!-- a tag canvas dentro da div vem com a 'tela branca ' p conseguir desenhar nela -->
+
+</body>
+
+<script>
+    const ctx = document.getElementById('myChart'); // p criar um novo gráfico com o id do canvas
+    const ctx2 = document.getElementById('myChart2'); // p criar um novo gráfico com o id do canvas
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [{
+                label: 'Temperatura',
+                data: [30, 29, 28, 25, 22, 23],
+                borderWidth: 1,
+                borderColor:"#FF69B4",
+                backgroundColor: "#FF69B4",
+                // estilização do gráfico: legenda, métrica e estilo
+
+            },
+                // criar outra métrica
+                {
+                  label: 'Umidade',
+                    data: [80 ,82, 80, 85, 80, 83],
+                    borderWidth: 1,
+                    borderColor:"#4682B4",
+                    backgroundColor: "#4682B4",
+                }]
+                
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [{
+                label: 'Temperatura Média',
+                data: [22, 24, 27, 23, 20, 18],
+                borderWidth: 1,
+                borderColor:"#FF69B4",
+                backgroundColor: "#FF69B4",
+                // estilização do gráfico: legenda, métrica e estilo
+
+            },
+                // criar outra métrica
+                {
+                  label: 'Umidade Média',
+                    data: [90 ,89, 45, 93, 87, 82],
+                    borderWidth: 1,
+                    borderColor:"#4682B4",
+                    backgroundColor: "#4682B4",
+                }]
+                
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+</script>
+
+</html>
