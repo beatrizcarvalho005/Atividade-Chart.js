@@ -11,9 +11,12 @@
 
 <body style="display: flex;">
     <div style="margin-right: 40px;">
+        <h2 style=text-align:center;> Monitoramento diário da Temperatura e Umidade</h2>
         <canvas id="myChart" style="position: relative; height: 400px; width: 600px;"></canvas>
     </div>
+
     <div style="margin-left: 40px;">
+        <h2 style=text-align:center;> Monitoramento mensal da Temperatura e Umidade</h2>
         <canvas id="myChart2" style="position: relative; height: 400px; width: 600px;"></canvas>
     </div>
     <!-- a tag canvas dentro da div vem com a 'tela branca ' p conseguir desenhar nela -->
@@ -55,6 +58,7 @@
         }
     });
     new Chart(ctx2, {
+       
         type: 'bar',
         data: {
             labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
